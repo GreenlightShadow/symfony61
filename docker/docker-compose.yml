@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  php:
+    build:
+      context: ..
+      dockerfile: docker/php/Dockerfile
+    working_dir: /var/www/symfony61/docker
+    volumes:
+      - '../:/var/www/bot'
+
+  nginx:
+    image: nginx:1.21.6-alpine
+    restart: always
+    ports:
+      - '8090:80'
+    volumes:
+      - '../:/var/www/symfony61'
+      - './nginx/nginx.conf:/etc/nginx/conf.d/default.conf'
+    depends_on:
+      - php
