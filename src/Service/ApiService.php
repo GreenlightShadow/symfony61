@@ -22,7 +22,7 @@ class ApiService
         return $this->parse($response['data']['stats']);
     }
 
-    private function parse(array $data): string
+    public function parse(array $data): string
     {
         return $this->repository->stringify($data);
     }
