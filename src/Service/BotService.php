@@ -3,7 +3,6 @@
 namespace App\Service;
 
 use Symfony\Component\Notifier\ChatterInterface;
-use Symfony\Component\Notifier\Exception\TransportExceptionInterface;
 use Symfony\Component\Notifier\Message\ChatMessage;
 
 class BotService
@@ -13,13 +12,9 @@ class BotService
     {
     }
 
-    /**
-     * @throws TransportExceptionInterface
-     */
     public function sendTelegramNotification($data): void
     {
-        $messageString = "Статистика войны на текущее время: \n\n$data";
-        $message = (new ChatMessage($messageString));
+        $message = (new ChatMessage($data));
         $this->chatter->send($message);
     }
 }

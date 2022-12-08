@@ -23,8 +23,14 @@ class BotController extends AbstractController
     public function index(): JsonResponse
     {
         $data = $this->api->getStats();
-        $this->botService->sendTelegramNotification($data);
+        if ($data !== '') {
+            $this->botService->sendTelegramNotification($data);
 
-        return $this->json('Success');
+            return $this->json('Success');
+        } else {
+            return $this->json('Failed');
+        }
+
+
     }
 }
