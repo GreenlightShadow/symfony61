@@ -1,6 +1,8 @@
 <?php
 
     return [
+        'title' => "Статистика войны на текущее время: \n\n",
+
         'personnel_units' => "Личный состав",
         'tanks' => "Танки",
         'armoured_fighting_vehicles' => "ББМ",

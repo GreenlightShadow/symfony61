@@ -13,7 +13,7 @@ class DataRepository
 
     public function stringify(array $array): string
     {
-        $result = '';
+        $result = $this->translator->trans('title');
         foreach ($array as $key => $value) {
             $key = $this->translator->trans($key);
             $result .= "$key : $value \n";
