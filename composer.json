@@ -13,6 +13,7 @@
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.1.*",
         "symfony/maker-bundle": "^1.48",
+        "symfony/monolog-bundle": "^3.8",
         "symfony/notifier": "6.1.*",
         "symfony/runtime": "6.1.*",
         "symfony/telegram-notifier": "6.1.*",
